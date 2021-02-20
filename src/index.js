@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from 'react-router-dom';
+import PersonsState from './context/persons/PersonsState'
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      {/* <PersonsProvider> */}
+      <PersonsState>
+        <App />
+      </PersonsState>
+      {/* </PersonsProvider> */}
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
